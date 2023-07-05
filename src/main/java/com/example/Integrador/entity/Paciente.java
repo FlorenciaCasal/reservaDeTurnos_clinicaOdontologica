@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +17,7 @@ import java.util.Set;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     private Long id;
 
     @Column
@@ -25,6 +27,7 @@ public class Paciente {
     private String apellido;
 
     @Column(nullable = false, unique = true)
+    @NotNull
     private String documento;
 
     @Column

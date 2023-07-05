@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -14,6 +15,7 @@ import java.time.LocalTime;
 public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     private Long id;
 
     @ManyToOne

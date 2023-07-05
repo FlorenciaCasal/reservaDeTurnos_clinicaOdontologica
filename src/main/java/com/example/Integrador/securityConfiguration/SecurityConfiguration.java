@@ -44,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/odontologos/**","/pacientes/**").hasRole("ADMIN")
                 //DA PERMISO A LOS DOS USUARIOS
                 .antMatchers( "/turnos/**").hasAnyRole("ADMIN","USER")
+                .antMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                 //SI ESTAS LOGUEADO ACCEDES
                 .anyRequest()
                 .authenticated()

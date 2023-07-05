@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,12 +16,14 @@ import java.util.Set;
 public class Odontologo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     private Long id;
     @Column
     private String nombre;
     @Column
     private String apellido;
     @Column(unique = true, nullable = false)
+    @NotNull
     private String matricula;
     @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
     @JsonIgnore
